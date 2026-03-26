@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X, Mic } from 'lucide-react';
 
 const navLinks = [
-  { href: '/#features', label: 'Features' },
+  { href: '#how-it-works', label: 'How It Works' },
+  { href: '#features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 export default function Navbar() {
@@ -26,15 +27,17 @@ export default function Navbar() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'backdrop-blur-md bg-black/60 border-b border-white/10 shadow-lg'
-            : 'bg-transparent'
+            ? 'backdrop-blur-md bg-white/80 border-b border-gray-100 shadow-sm'
+            : 'bg-white'
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Zap className="w-5 h-5 text-[#FF6D5B]" />
-            <span>AgentFlow</span>
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl text-blue-900">
+            <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center">
+              <Mic className="w-4 h-4 text-white" />
+            </div>
+            VoicePost
           </Link>
 
           {/* Desktop links */}
@@ -43,7 +46,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors"
+                className="text-sm text-gray-600 hover:text-blue-900 font-medium transition-colors"
               >
                 {link.label}
               </Link>
@@ -53,16 +56,16 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/pricing"
-              className="px-4 py-2 rounded-lg bg-[#FF6D5B] text-white text-sm font-semibold hover:bg-[#e5503f] transition-colors"
+              href="#beta"
+              className="px-4 py-2 rounded-lg bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors"
             >
-              Get Started
+              Join the Beta
             </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+            className="md:hidden p-2 text-gray-500 hover:text-blue-900 transition-colors"
             onClick={() => setIsOpen((v) => !v)}
             aria-label="Toggle navigation menu"
           >
@@ -75,30 +78,34 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
-              className="fixed inset-0 z-40 bg-black/70 md:hidden"
+              className="fixed inset-0 z-40 bg-black/30 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
             />
-            {/* Drawer panel */}
             <motion.div
-              className="fixed top-0 right-0 z-50 h-full w-72 bg-[#111111] border-l border-white/10 flex flex-col p-6 gap-6 md:hidden"
+              className="fixed top-0 right-0 z-50 h-full w-72 bg-white border-l border-gray-100 flex flex-col p-6 gap-6 shadow-xl md:hidden"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 220 }}
             >
               <div className="flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
-                  <Zap className="w-5 h-5 text-[#FF6D5B]" />
-                  AgentFlow
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 font-bold text-lg text-blue-900"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="w-7 h-7 rounded-lg bg-orange-500 flex items-center justify-center">
+                    <Mic className="w-3.5 h-3.5 text-white" />
+                  </div>
+                  VoicePost
                 </Link>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1 text-gray-400 hover:text-white transition-colors"
+                  className="p-1 text-gray-400 hover:text-gray-700"
                   aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
@@ -111,7 +118,7 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="px-3 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-all text-sm"
+                    className="px-3 py-3 rounded-lg text-gray-700 hover:text-blue-900 hover:bg-blue-50 transition-all text-sm font-medium"
                   >
                     {link.label}
                   </Link>
@@ -119,11 +126,11 @@ export default function Navbar() {
               </nav>
 
               <Link
-                href="/pricing"
+                href="#beta"
                 onClick={() => setIsOpen(false)}
-                className="mt-auto text-center px-4 py-3 rounded-lg bg-[#FF6D5B] text-white font-semibold text-sm hover:bg-[#e5503f] transition-colors"
+                className="mt-auto text-center px-4 py-3 rounded-lg bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-colors"
               >
-                Get Started
+                Join the Beta
               </Link>
             </motion.div>
           </>

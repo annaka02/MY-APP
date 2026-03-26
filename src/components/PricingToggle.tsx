@@ -7,67 +7,67 @@ import Link from 'next/link';
 
 interface Plan {
   name: string;
-  monthly: number;
-  yearly: number;
+  monthly: number | null;
+  yearly: number | null;
   description: string;
   features: string[];
   cta: string;
   ctaHref: string;
   highlighted: boolean;
+  badge?: string;
 }
 
 const plans: Plan[] = [
   {
-    name: 'Starter',
-    monthly: 29,
-    yearly: 23,
-    description: 'Perfect for solo builders and small teams exploring automation.',
+    name: 'Free',
+    monthly: 0,
+    yearly: 0,
+    description: 'Get started and see the magic. Perfect for testing the waters.',
     features: [
-      '500 workflow runs / month',
-      '5 active workflows',
-      '50+ community integrations',
-      'Email support',
-      'Basic analytics dashboard',
+      '5 posts per month',
+      'LinkedIn only',
+      'Manual review via WhatsApp',
+      'English support',
+      'Basic output quality',
     ],
-    cta: 'Get Started',
-    ctaHref: '/',
+    cta: 'Start for Free',
+    ctaHref: '#beta',
     highlighted: false,
   },
   {
     name: 'Pro',
-    monthly: 79,
-    yearly: 63,
-    description: 'For growing teams that need power, speed, and priority support.',
+    monthly: 19,
+    yearly: 15,
+    description: 'For entrepreneurs serious about building their personal brand.',
     features: [
-      '10,000 workflow runs / month',
-      'Unlimited active workflows',
-      '200+ integrations',
-      'Priority email & live chat',
-      'Advanced analytics',
-      'Custom webhooks',
-      'Team collaboration',
+      'Unlimited posts',
+      'LinkedIn · X · Substack',
+      'Review & approval on WhatsApp',
+      'English & French support',
+      'Smart scheduling',
+      'Weekly performance analytics',
+      'Priority support',
     ],
     cta: 'Start Free Trial',
-    ctaHref: '/',
+    ctaHref: '#beta',
     highlighted: true,
+    badge: 'Recommended',
   },
   {
-    name: 'Enterprise',
-    monthly: 249,
-    yearly: 199,
-    description: 'Mission-critical automation for large orgs with custom needs.',
+    name: 'Team',
+    monthly: 49,
+    yearly: 39,
+    description: 'For cohorts, incubators, and startup teams posting as one voice.',
     features: [
-      'Unlimited workflow runs',
-      'Unlimited workflows',
-      'All integrations + custom builds',
-      'Dedicated account manager',
-      '99.99% SLA guarantee',
-      'SSO & advanced RBAC',
-      'On-premise deployment option',
-      'Custom AI model fine-tuning',
+      'Everything in Pro',
+      'Up to 5 team members',
+      'Shared brand voice settings',
+      'Team analytics dashboard',
+      'Custom tone profiles',
+      'Dedicated onboarding call',
     ],
-    cta: 'Contact Sales',
-    ctaHref: '/#contact',
+    cta: 'Contact Us',
+    ctaHref: '#beta',
     highlighted: false,
   },
 ];
@@ -77,16 +77,16 @@ export default function PricingToggle() {
 
   return (
     <div>
-      {/* Billing toggle */}
+      {/* Toggle */}
       <div className="flex items-center justify-center gap-4 mb-14">
-        <span className={`text-sm font-medium transition-colors ${!yearly ? 'text-white' : 'text-gray-500'}`}>
+        <span className={`text-sm font-medium transition-colors ${!yearly ? 'text-gray-900' : 'text-gray-400'}`}>
           Monthly
         </span>
         <button
           onClick={() => setYearly((v) => !v)}
           aria-label="Toggle billing period"
-          className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none ${
-            yearly ? 'bg-[#FF6D5B]' : 'bg-white/20'
+          className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-300 ${
+            yearly ? 'bg-orange-500' : 'bg-gray-300'
           }`}
         >
           <motion.span
@@ -95,15 +95,15 @@ export default function PricingToggle() {
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
           />
         </button>
-        <span className={`text-sm font-medium transition-colors ${yearly ? 'text-white' : 'text-gray-500'}`}>
+        <span className={`text-sm font-medium transition-colors ${yearly ? 'text-gray-900' : 'text-gray-400'}`}>
           Yearly{' '}
-          <span className="ml-1 px-1.5 py-0.5 rounded bg-[#FF6D5B]/20 text-[#FF6D5B] text-xs font-bold">
+          <span className="ml-1 px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold">
             Save 20%
           </span>
         </span>
       </div>
 
-      {/* Plan cards */}
+      {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
         {plans.map((plan, i) => (
           <motion.div
@@ -113,52 +113,64 @@ export default function PricingToggle() {
             transition={{ delay: i * 0.1, duration: 0.5, ease: 'easeOut' }}
             className={`relative flex flex-col p-8 rounded-2xl border transition-all duration-300 ${
               plan.highlighted
-                ? 'bg-[#FF6D5B]/10 border-[#FF6D5B]/40 shadow-[0_0_50px_rgba(255,109,91,0.12)]'
-                : 'bg-[#111111] border-white/8 hover:border-white/20'
+                ? 'bg-blue-900 border-blue-700 shadow-2xl shadow-blue-200'
+                : 'bg-white border-gray-200 shadow-sm hover:shadow-md'
             }`}
           >
-            {plan.highlighted && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#FF6D5B] text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap">
-                Most Popular
+            {plan.badge && (
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-orange-500 text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap shadow">
+                {plan.badge}
               </div>
             )}
 
-            <h2 className="text-xl font-bold mb-1">{plan.name}</h2>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">{plan.description}</p>
+            <h2 className={`text-xl font-bold mb-1 ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}>
+              {plan.name}
+            </h2>
+            <p className={`text-sm mb-6 leading-relaxed ${plan.highlighted ? 'text-blue-300' : 'text-gray-500'}`}>
+              {plan.description}
+            </p>
 
             {/* Price */}
-            <div className="mb-6 flex items-end gap-1">
+            <div className="flex items-end gap-1 mb-1">
               <motion.span
                 key={`${plan.name}-${yearly}`}
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-4xl font-extrabold"
+                className={`text-4xl font-extrabold ${plan.highlighted ? 'text-white' : 'text-gray-900'}`}
               >
-                ${yearly ? plan.yearly : plan.monthly}
+                {plan.monthly === 0 ? 'Free' : `$${yearly ? plan.yearly : plan.monthly}`}
               </motion.span>
-              <span className="text-gray-500 text-sm mb-1">/mo</span>
+              {plan.monthly !== 0 && (
+                <span className={`text-sm mb-1 ${plan.highlighted ? 'text-blue-300' : 'text-gray-400'}`}>
+                  /mo
+                </span>
+              )}
             </div>
-            {yearly && (
-              <p className="text-xs text-gray-500 -mt-4 mb-6">billed annually</p>
+            {yearly && plan.monthly !== 0 && (
+              <p className={`text-xs mb-6 ${plan.highlighted ? 'text-blue-400' : 'text-gray-400'}`}>
+                billed annually
+              </p>
             )}
 
-            {/* Feature list */}
-            <ul className="flex flex-col gap-3 mb-8 flex-1">
+            {/* Features */}
+            <ul className="flex flex-col gap-3 mb-8 flex-1 mt-4">
               {plan.features.map((feat) => (
-                <li key={feat} className="flex items-start gap-2.5 text-sm text-gray-300">
-                  <Check className="w-4 h-4 text-[#FF6D5B] mt-0.5 shrink-0" />
-                  {feat}
+                <li key={feat} className="flex items-start gap-2.5 text-sm">
+                  <Check className={`w-4 h-4 mt-0.5 shrink-0 ${plan.highlighted ? 'text-orange-400' : 'text-blue-600'}`} />
+                  <span className={plan.highlighted ? 'text-blue-100' : 'text-gray-600'}>
+                    {feat}
+                  </span>
                 </li>
               ))}
             </ul>
 
             <Link
               href={plan.ctaHref}
-              className={`text-center px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200 ${
+              className={`text-center px-6 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
                 plan.highlighted
-                  ? 'bg-[#FF6D5B] text-white hover:bg-[#e5503f]'
-                  : 'border border-white/20 text-white hover:border-white/40 hover:bg-white/5'
+                  ? 'bg-orange-500 text-white hover:bg-orange-600'
+                  : 'border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white'
               }`}
             >
               {plan.cta}

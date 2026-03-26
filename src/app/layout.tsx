@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AgentFlow — AI Automation Powered by n8n",
+  title: "VoicePost — Send a Voice Note. Post Everywhere.",
   description:
-    "Automate complex workflows with an AI Agent built on n8n. No code required.",
+    "Send a WhatsApp voice note and let AI write your LinkedIn, X, and Substack posts. Review before publishing. Built for Mest Africa entrepreneurs.",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-[#0a0a0a] text-[#ededed]">
+      <body className="min-h-screen flex flex-col bg-white text-gray-700">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

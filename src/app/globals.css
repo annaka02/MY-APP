@@ -1,18 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FF6D5B;
-  --color-primary-hover: #e5503f;
-  --color-surface: #111111;
-  --color-surface-2: #1a1a1a;
-  --color-border: #2a2a2a;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
 }
 
 html {
@@ -20,7 +10,7 @@ html {
 }
 
 body {
-  background: #0a0a0a;
-  color: #ededed;
+  background: #ffffff;
+  color: #374151;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

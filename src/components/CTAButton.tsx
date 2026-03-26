@@ -3,25 +3,32 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-export default function CTAButton() {
+interface Props {
+  label?: string;
+  href?: string;
+}
+
+export default function CTAButton({
+  label = 'Join the Beta — It\'s Free',
+  href = '#beta',
+}: Props) {
   return (
     <motion.div
-      className="relative"
+      className="relative inline-flex"
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
     >
-      {/* Pulsing glow ring */}
+      {/* Pulsing glow */}
       <motion.div
-        className="absolute inset-0 rounded-lg bg-[#FF6D5B] blur-lg"
-        animate={{ opacity: [0.25, 0.5, 0.25] }}
+        className="absolute inset-0 rounded-xl bg-orange-500 blur-lg"
+        animate={{ opacity: [0.3, 0.55, 0.3] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
       />
       <Link
-        href="/pricing"
-        className="relative inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#FF6D5B] text-white text-sm font-semibold hover:bg-[#e5503f] transition-colors"
+        href={href}
+        className="relative px-6 py-3.5 rounded-xl bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-colors"
       >
-        Start Automating
-        <span aria-hidden="true">→</span>
+        {label}
       </Link>
     </motion.div>
   );
