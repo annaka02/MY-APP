@@ -85,8 +85,8 @@ export default function PricingToggle() {
         <button
           onClick={() => setYearly((v) => !v)}
           aria-label="Toggle billing period"
-          className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-300 ${
-            yearly ? 'bg-orange-500' : 'bg-gray-300'
+          className={`relative w-12 h-6 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
+            yearly ? 'bg-emerald-600' : 'bg-gray-300'
           }`}
         >
           <motion.span
@@ -97,7 +97,7 @@ export default function PricingToggle() {
         </button>
         <span className={`text-sm font-medium transition-colors ${yearly ? 'text-gray-900' : 'text-gray-400'}`}>
           Yearly{' '}
-          <span className="ml-1 px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-600 text-xs font-bold">
+          <span className="ml-1 px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">
             Save 20%
           </span>
         </span>
@@ -118,7 +118,7 @@ export default function PricingToggle() {
             }`}
           >
             {plan.badge && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-orange-500 text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap shadow">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap shadow">
                 {plan.badge}
               </div>
             )}
@@ -157,7 +157,7 @@ export default function PricingToggle() {
             <ul className="flex flex-col gap-3 mb-8 flex-1 mt-4">
               {plan.features.map((feat) => (
                 <li key={feat} className="flex items-start gap-2.5 text-sm">
-                  <Check className={`w-4 h-4 mt-0.5 shrink-0 ${plan.highlighted ? 'text-orange-400' : 'text-blue-600'}`} />
+                  <Check className={`w-4 h-4 mt-0.5 shrink-0 ${plan.highlighted ? 'text-emerald-500' : 'text-blue-600'}`} />
                   <span className={plan.highlighted ? 'text-blue-100' : 'text-gray-600'}>
                     {feat}
                   </span>
@@ -169,7 +169,7 @@ export default function PricingToggle() {
               href={plan.ctaHref}
               className={`text-center px-6 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
                 plan.highlighted
-                  ? 'bg-orange-500 text-white hover:bg-orange-600'
+                  ? 'bg-emerald-600 text-white hover:bg-emerald-700'
                   : 'border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white'
               }`}
             >

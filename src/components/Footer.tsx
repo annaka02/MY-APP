@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 font-bold text-xl text-blue-900 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center">
                 <Mic className="w-4 h-4 text-white" />
               </div>
               VoicePost

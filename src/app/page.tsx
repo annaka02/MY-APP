@@ -25,7 +25,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center text-center">
             {/* Badge */}
             <ScrollReveal>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold mb-7 tracking-wide uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold mb-7 tracking-wide uppercase">
                 <span>🇬🇭</span>
                 Exclusive — Mest Africa
               </div>
@@ -35,7 +35,7 @@ export default function HomePage() {
             <ScrollReveal delay={0.08}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1] max-w-4xl">
                 Send a voice note.{' '}
-                <span className="text-orange-500">Post everywhere.</span>
+                <span className="text-emerald-600">Post everywhere.</span>
               </h1>
             </ScrollReveal>
 
@@ -90,7 +90,7 @@ export default function HomePage() {
       <section className="px-4 py-24 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
-            <p className="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-3">
               Pricing
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
@@ -142,7 +142,7 @@ export default function HomePage() {
       <section id="beta" className="px-4 py-24 bg-gray-50">
         <div className="max-w-2xl mx-auto">
           <ScrollReveal className="text-center mb-12">
-            <p className="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-3">
               Join the Beta
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">

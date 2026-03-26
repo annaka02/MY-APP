@@ -34,7 +34,7 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-blue-900">
-            <div className="w-8 h-8 rounded-lg bg-orange-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center">
               <Mic className="w-4 h-4 text-white" />
             </div>
             VoicePost
@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="#beta"
-              className="px-4 py-2 rounded-lg bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600 transition-colors"
+              className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 transition-colors"
             >
               Join the Beta
             </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 font-bold text-lg text-blue-900"
                   onClick={() => setIsOpen(false)}
                 >
-                  <div className="w-7 h-7 rounded-lg bg-orange-500 flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-600 flex items-center justify-center">
                     <Mic className="w-3.5 h-3.5 text-white" />
                   </div>
                   VoicePost
@@ -128,7 +128,7 @@ export default function Navbar() {
               <Link
                 href="#beta"
                 onClick={() => setIsOpen(false)}
-                className="mt-auto text-center px-4 py-3 rounded-lg bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-colors"
+                className="mt-auto text-center px-4 py-3 rounded-lg bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors"
               >
                 Join the Beta
               </Link>

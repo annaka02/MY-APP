@@ -21,7 +21,7 @@ const features = [
     title: 'Review Before You Publish',
     description:
       'Nothing goes live without your explicit approval. Read every draft on WhatsApp, request edits in plain language, and publish only when you\'re happy.',
-    color: 'bg-orange-50 text-orange-600',
+    color: 'bg-emerald-50 text-emerald-700',
   },
   {
     Icon: Clock,
@@ -51,7 +51,7 @@ export default function FeaturesGrid() {
     <section id="features" className="px-4 py-24">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal className="text-center mb-16">
-          <p className="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-3">
             Features
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">

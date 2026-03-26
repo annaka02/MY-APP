@@ -40,7 +40,7 @@ export default function FAQAccordion() {
     <section id="faq" className="px-4 py-24">
       <div className="max-w-3xl mx-auto">
         <ScrollReveal className="text-center mb-14">
-          <p className="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-3">
             FAQ
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">

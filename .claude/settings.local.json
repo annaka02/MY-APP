@@ -6,7 +6,8 @@
       "Bash(npm install:*)",
       "Bash(node -e \"const fm = require\\(''''./node_modules/framer-motion/dist/cjs/framer-motion.js''''\\); console.log\\(Object.keys\\(fm\\).filter\\(k => [''''motion'''',''''AnimatePresence'''',''''useInView'''',''''LazyMotion''''].includes\\(k\\)\\)\\)\")",
       "Bash(npx tsc:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(xargs sed:*)"
     ]
   }
 }

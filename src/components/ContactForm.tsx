@@ -63,7 +63,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => { setSubmitted(false); setForm(EMPTY); }}
-          className="mt-2 text-sm text-orange-500 hover:underline font-medium"
+          className="mt-2 text-sm text-emerald-600 hover:underline font-medium"
         >
           Register another person
         </button>
@@ -150,7 +150,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-orange-500 text-white font-bold text-sm hover:bg-orange-600 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-md shadow-orange-100"
+        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-md shadow-emerald-100"
       >
         {loading ? (
           <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />

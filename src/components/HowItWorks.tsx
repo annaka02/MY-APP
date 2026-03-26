@@ -28,9 +28,9 @@ const steps = [
     title: 'Review & Approve',
     description:
       'You receive the drafts directly on WhatsApp. Read through, approve with a simple reply — or ask for edits in plain language. Once you say yes, VoicePost schedules and publishes everything automatically. No extra app needed.',
-    color: 'bg-orange-100 text-orange-700',
+    color: 'bg-emerald-100 text-emerald-700',
     badge: 'You\'re in control',
-    badgeColor: 'bg-orange-50 text-orange-700 border-orange-200',
+    badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   },
 ];
 
@@ -39,7 +39,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="px-4 py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <ScrollReveal className="text-center mb-16">
-          <p className="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-emerald-600 font-semibold text-sm uppercase tracking-widest mb-3">
             How It Works
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">

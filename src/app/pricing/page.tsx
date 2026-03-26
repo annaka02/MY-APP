@@ -38,7 +38,7 @@ export default function PricingPage() {
       <div className="px-4 py-24 max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-600 text-xs font-bold mb-6 tracking-widest uppercase">
+          <div className="inline-block px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold mb-6 tracking-widest uppercase">
             Pricing
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
@@ -97,7 +97,7 @@ export default function PricingPage() {
         <ScrollReveal delay={0.2} className="mt-16 text-center">
           <p className="text-gray-400 text-sm">
             Questions about pricing?{' '}
-            <a href="/#beta" className="text-orange-500 font-semibold hover:underline">
+            <a href="/#beta" className="text-emerald-600 font-semibold hover:underline">
               Get in touch
             </a>{' '}
             — we respond within a few hours.

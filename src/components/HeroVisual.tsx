@@ -16,7 +16,7 @@ function Connector({ delay }: { delay: number }) {
       <div className="w-full h-px border-t-2 border-dashed border-gray-300" />
       {/* Traveling dot */}
       <motion.div
-        className="absolute w-2.5 h-2.5 rounded-full bg-orange-500 shadow-md shadow-orange-200"
+        className="absolute w-2.5 h-2.5 rounded-full bg-emerald-600 shadow-md shadow-emerald-200"
         initial={{ left: 0, opacity: 0 }}
         animate={{ left: ['0%', '100%'], opacity: [0, 1, 1, 0] }}
         transition={{
@@ -77,7 +77,7 @@ export default function HeroVisual() {
         className="sm:hidden w-px h-8 border-l-2 border-dashed border-gray-300 relative"
       >
         <motion.div
-          className="absolute w-2.5 h-2.5 rounded-full bg-orange-500 shadow-sm left-1/2 -translate-x-1/2"
+          className="absolute w-2.5 h-2.5 rounded-full bg-emerald-600 shadow-sm left-1/2 -translate-x-1/2"
           initial={{ top: 0, opacity: 0 }}
           animate={{ top: ['0%', '100%'], opacity: [0, 1, 1, 0] }}
           transition={{ duration: 1.4, delay: 0.8, repeat: Infinity, ease: 'linear' }}
@@ -91,7 +91,7 @@ export default function HeroVisual() {
         transition={{ delay: 0.55, duration: 0.5 }}
         className="flex flex-col items-center gap-3 p-5 rounded-2xl bg-blue-900 border border-blue-800 shadow-lg w-40 shrink-0"
       >
-        <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center shadow-sm">
+        <div className="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center shadow-sm">
           <Zap className="w-6 h-6 text-white" />
         </div>
         <div className="text-center">
@@ -123,7 +123,7 @@ export default function HeroVisual() {
         className="sm:hidden w-px h-8 border-l-2 border-dashed border-gray-300 relative"
       >
         <motion.div
-          className="absolute w-2.5 h-2.5 rounded-full bg-orange-500 shadow-sm left-1/2 -translate-x-1/2"
+          className="absolute w-2.5 h-2.5 rounded-full bg-emerald-600 shadow-sm left-1/2 -translate-x-1/2"
           initial={{ top: 0, opacity: 0 }}
           animate={{ top: ['0%', '100%'], opacity: [0, 1, 1, 0] }}
           transition={{ duration: 1.4, delay: 1.4, repeat: Infinity, ease: 'linear' }}

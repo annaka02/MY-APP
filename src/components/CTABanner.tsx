@@ -6,14 +6,14 @@ export default function CTABanner() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Decorative dots */}
         <div className="flex justify-center gap-2 mb-8">
-          {['bg-orange-500', 'bg-white/40', 'bg-white/20'].map((c, i) => (
+          {['bg-emerald-600', 'bg-white/40', 'bg-white/20'].map((c, i) => (
             <span key={i} className={`w-2 h-2 rounded-full ${c}`} />
           ))}
         </div>
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
           Ready to build your{' '}
-          <span className="text-orange-400">online presence</span>?
+          <span className="text-emerald-500">online presence</span>?
         </h2>
 
         <p className="mt-5 text-blue-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -24,7 +24,7 @@ export default function CTABanner() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
           <Link
             href="#beta"
-            className="px-7 py-4 rounded-xl bg-orange-500 text-white font-bold text-sm hover:bg-orange-600 transition-colors shadow-lg shadow-orange-900/30"
+            className="px-7 py-4 rounded-xl bg-emerald-600 text-white font-bold text-sm hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-900/30"
           >
             Join the Beta — It&apos;s Free
           </Link>

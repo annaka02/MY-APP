@@ -20,13 +20,13 @@ export default function CTAButton({
     >
       {/* Pulsing glow */}
       <motion.div
-        className="absolute inset-0 rounded-xl bg-orange-500 blur-lg"
+        className="absolute inset-0 rounded-xl bg-emerald-600 blur-lg"
         animate={{ opacity: [0.3, 0.55, 0.3] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
       />
       <Link
         href={href}
-        className="relative px-6 py-3.5 rounded-xl bg-orange-500 text-white font-semibold text-sm hover:bg-orange-600 transition-colors"
+        className="relative px-6 py-3.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm hover:bg-emerald-700 transition-colors"
       >
         {label}
       </Link>
